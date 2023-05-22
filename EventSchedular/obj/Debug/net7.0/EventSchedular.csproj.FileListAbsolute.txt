@@ -1,0 +1,8 @@
+C:\Users\patel\Projects\EventSchedular\EventSchedular\obj\Debug\net7.0\EventSchedular.csproj.AssemblyReference.cache
+C:\Users\patel\Projects\EventSchedular\EventSchedular\obj\Debug\net7.0\EventSchedular.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patel\Projects\EventSchedular\EventSchedular\obj\Debug\net7.0\EventSchedular.AssemblyInfoInputs.cache
+C:\Users\patel\Projects\EventSchedular\EventSchedular\obj\Debug\net7.0\EventSchedular.AssemblyInfo.cs
+C:\Users\patel\Projects\EventSchedular\EventSchedular\obj\Debug\net7.0\EventSchedular.csproj.CoreCompileInputs.cache
+C:\Users\patel\Projects\EventSchedular\EventSchedular\obj\Debug\net7.0\EventSchedular.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\patel\Projects\EventSchedular\EventSchedular\obj\Debug\net7.0\EventSchedular.RazorAssemblyInfo.cache
+C:\Users\patel\Projects\EventSchedular\EventSchedular\obj\Debug\net7.0\EventSchedular.RazorAssemblyInfo.cs

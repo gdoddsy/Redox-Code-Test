@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redox Code Test", "Redox Code Test.csproj", "{42674D26-BF8C-42BC-B4D1-E349397236D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSchedularProject", "..\EventSchedular\EventSchedular\EventSchedularProject.csproj", "{41DEFB34-D6C1-4EC8-A543-10BBE6081EDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42674D26-BF8C-42BC-B4D1-E349397236D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42674D26-BF8C-42BC-B4D1-E349397236D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42674D26-BF8C-42BC-B4D1-E349397236D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42674D26-BF8C-42BC-B4D1-E349397236D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41DEFB34-D6C1-4EC8-A543-10BBE6081EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41DEFB34-D6C1-4EC8-A543-10BBE6081EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41DEFB34-D6C1-4EC8-A543-10BBE6081EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41DEFB34-D6C1-4EC8-A543-10BBE6081EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E54CBC9-81D1-4DED-9B41-E36A42E61203}
+	EndGlobalSection
+EndGlobal

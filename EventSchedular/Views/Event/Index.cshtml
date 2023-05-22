@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Event>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+
+  <!--  <div class="container">
+        <a asp-area="" asp-controller="Exercise1" asp-action="Exercise1">Exercise 1 Linq Query</a>
+    </div>
+
+    <div class="container"><a asp-area="" asp-controller="Event" asp-action="ScheduleEvent">Schedule Event</a>    
+</div>
+
+    <div class="container">
+        <a asp-area="" asp-controller="Event" asp-action="GetUpcomingEvents">Get Upcoming Events</a>
+    </div>
+        -->
+<h2>Here is the list of All Events</h2>
+<table class="table table-responsive bg-light">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>DateTime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model != null){
+        @foreach(Event e in Model)
+        {
+            <tr>
+                <td>@e.Name</td>
+                <td>@e.Location</td>
+                <td>@e.DateTime</td>
+                <td><a asp-action="Update" asp-route-id="@e.Id">Update</a></td>
+                <td>
+                           <!-- <form asp-route-id="@e.Id" asp-action="CancelEvent" method="post">
+                                <button type="submit" >Cancel Event</button>
+                    </form>-->
+                            <a asp-action="CancelEvent" asp-route-id="@e.Id">Cancel</a>
+                        
+                </td>
+            </tr>
+
+         }
+            }
+            <tr><td><span class="alert-danger">@Html.ValidationMessage("Error")</span></td></tr>
+    </tbody>
+
+</table>
+</div>

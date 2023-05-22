@@ -1,0 +1,44 @@
+﻿<div>
+<h2>Exercise 1</h2>
+<table class="table table-responsive bg-light">
+    <thead>
+        <tr>
+                <th>List of integers created from 1 to 100</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr><td>
+                    @Html.Label("ListInt", (string)ViewBag.ListInt)
+                </td>
+        </tr>
+    </tbody>
+    </table>
+    <table class="table table-responsive bg-light">
+        <thead>
+            <tr>
+                <th>List of even numbers from 1 to 100</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.Label("ListEven", (string)ViewBag.ListEven)
+                </td>
+            </tr>
+        </tbody></table>
+    <table class="table table-responsive bg-light">
+        <thead>
+            <tr>
+                <th>List of numbers divisible by 3 or 5 but not both</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.Label("Listnoboth", (string)ViewBag.Listnoboth)
+                </td>
+            </tr>
+        </tbody>
+
+</table>
+</div>
