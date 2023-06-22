@@ -31,7 +31,7 @@ namespace Redox_Code_Test
         }
         public bool CancelEvent(Event evt)
         {
-            Event matchedEvt = evtList.First(p => p.Name.Equals(evt.Name)
+            Event matchedEvt = evtList.FirstOrDefault(p => p.Name.Equals(evt.Name)
             && p.Location.Equals(evt.Location) && p.StartTime.Equals(evt.StartTime));
 
             if (matchedEvt == null)
