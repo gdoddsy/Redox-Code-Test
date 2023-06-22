@@ -7,26 +7,12 @@ namespace Redox_Code_Test
     {
         public static void Main()
         {
-            List<int> sequence = InitializeSequence(100);
+            List<int> sequence = Enumerable.Range(1, 100).ToList();
             IEnumerable<int> evenNums = GetEvenNums(sequence);
             Console.WriteLine(string.Join(' ', evenNums));
 
             IEnumerable<int> multiplesOf35 = GetMultiplesOf35(sequence);
             Console.WriteLine(string.Join(' ', multiplesOf35));
-        }
-
-        public static List<int> InitializeSequence(int length)
-        {
-            List<int> sequence = new List<int>();
-            if (length < 1)
-                return sequence;
-
-            for (int i = 1; i <= length; i++)
-            {
-                sequence.Add(i);
-            }
-
-            return sequence;
         }
 
         public static IEnumerable<int> GetEvenNums(List<int> array)
