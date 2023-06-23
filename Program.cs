@@ -6,8 +6,7 @@ namespace Redox_Code_Test
     {
         static void Main(string[] args)
         {
-            
-
+           Menu.DisplayMenu();
         }
     }
 }
