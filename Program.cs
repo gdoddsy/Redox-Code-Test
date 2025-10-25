@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Redox_Code_Test
@@ -24,10 +25,8 @@ namespace Redox_Code_Test
 	{
 		public void Run()
 		{
-			// 1: Create a list of integers from 1 to 100.
-			int[] numbers = Enumerable.Range(1,100).ToArray();
+			int[] numbers = Enumerable.Range(1, 100).ToArray();
 			
-			// 2: Use LINQ to find all even numbers in the list and print them.
 			var evens = from number in numbers
 						where (number % 2) == 0
 						select number;
@@ -36,8 +35,6 @@ namespace Redox_Code_Test
 				Console.WriteLine(number);
 			}
 			
-			// 3: Use a loop to find all of the numbers in the original list 
-			//    that are divisible by 3 or 5, but not 3 and 5.
 			foreach (int number in numbers)
 			{
 				bool three = number % 3 == 0;
@@ -52,10 +49,11 @@ namespace Redox_Code_Test
 	{
 		public void Run()
 		{
+			// Some example use cases I made to demonstrate the solution working
 			EventScheduler eventScheduler = new EventScheduler();
 			Event e1 = new Event("Event 1", "Location 1", new DateTime(2025, 1, 1, 12, 0, 0));
 			Event e2 = new Event("Event 2", "Location 2", new DateTime(2025, 1, 1, 12, 0, 1));
-			Event e3 = new Event("Event 3", "Location 2", new DateTime(2025, 1, 1, 12, 0, 1));
+			Event e3 = new Event("Event 3", "Location 3", new DateTime(2025, 1, 1, 12, 0, 1));
 			eventScheduler.ScheduleEvent(e1);
 			eventScheduler.ScheduleEvent(e2);
 			eventScheduler.ScheduleEvent(e3);
@@ -86,6 +84,8 @@ namespace Redox_Code_Test
 			get { return dateTime; }
 			set { dateTime = value; }
 		}
+
+		public Event() {}
 		
 		public Event(string name, string location, DateTime dateTime)
 		{
@@ -98,6 +98,30 @@ namespace Redox_Code_Test
 	public class EventScheduler
 	{
 		private List<Event> events = new List<Event>();
+
+		public EventScheduler()
+        {
+			string eventStorage = "storage.txt";
+			try
+			{
+				string[] storedEvents = File.ReadAllLines(eventStorage);
+				foreach (string e in storedEvents)
+				{
+					Event newEvent = new Event();
+
+					var data = e.Split(',');
+					newEvent.Name = data[0];
+					newEvent.Location = data[1];
+					newEvent.DateTime = DateTime.Parse(data[2]);
+
+					events.Add(newEvent);
+				}
+			}
+			catch (Exception exception)
+            {
+                Console.WriteLine($"Error: {exception}");
+            }
+		}
 		
 		public void ScheduleEvent(Event e)
 		{
@@ -110,21 +134,48 @@ namespace Redox_Code_Test
 				}
 			}
 			events.Add(e);
+			UpdateStorage();
 			Console.WriteLine($"Event {e.Name} Scheduled");
 		}
 		
 		public void CancelEvent(Event e)
 		{
 			events.Remove(e);
+			UpdateStorage();
 			Console.WriteLine($"Event {e.Name} Cancelled");
 		}
-		
+
 		public void GetUpcomingEvents()
 		{
 			foreach (Event e in events)
 			{
 				Console.WriteLine($"Event Details - Name: {e.Name}, Location: {e.Location}, Time: {e.DateTime}");
 			}
+		}
+		
+		private void UpdateStorage()
+        {
+			try
+			{
+				string eventStorage = "storage.txt";
+				File.WriteAllText(eventStorage, string.Empty);
+				
+				foreach (Event e in events)
+				{
+					string name = e.Name;
+					string location = e.Location;
+					string dateTime = e.DateTime.ToString("yyyy-MM-dd HH:mm:ss");
+
+					List<string> lines = new List<string>();
+					string line = name + "," + location + "," + dateTime;
+					lines.Add(line);
+					File.AppendAllLines(eventStorage, lines);
+				}
+			}
+			catch (Exception exception)
+            {
+                Console.WriteLine($"Error: {exception}");
+            }
 		}
 	}
 }
