@@ -18,10 +18,19 @@
 3. Implement a feature to prevent double-booking, where two events are scheduled for the exact same time.
 4. Save the Events to persistent storage. Any persistant storage can be used.
 
-## Changes made
+## Implementation Features
 
 - Upgraded the project to .NET 6.0 (enable running on MAC OS)
+- Added CLI interface for all operations
+- Implemented EventScheduler with O(1) conflict detection using HashSet
+- Added JSON persistence (persistantEvents.json)
+- Added test suite for Exercise 2
 
 ## Quickstart Guide
 
-- Start program with:  `dotnet run`
+- Start program with:  `dotnet run` to get a list of possible CLI commands
+- Run Exercise1 with `dotnet run -- testexercise1`
+- Run Exercise2 tests with `dotnet run -- testexercise2`
+- Schedule an exampe event with `dotnet run -- schedule "Breakfast" "Kitchen" "2026-01-01"`
+- Cancel Event with `dotnet run -- cancel "Breakfast"`
+- Get a list of upcoming events with `dotnet run -- getupcomingevents`

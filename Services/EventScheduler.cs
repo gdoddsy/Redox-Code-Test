@@ -8,6 +8,7 @@ using System.Text.Json;
 
 namespace Redox_Code_Test.Services
 {
+    //ideally restrict to a singleton later to ensure that multiple instances are not created
     public class EventScheduler
     {
         private List<Event> _events = new List<Event>();
