@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 //import LINQ for list queries
 using System.Linq;
+using Redox_Code_Test.Tests;
+
 
 namespace Redox_Code_Test
 {
@@ -19,9 +21,22 @@ namespace Redox_Code_Test
             Console.WriteLine(string.Join(", ", evenNumbers));
             
             //use LINQ query to find numbers divisible by 3 or 5 but NOT 15 (3 and 5) 
-            var divisibleNumbers = numbers.Where(n => (n % 3 == 0 || n % 5 == 0 ) && n % 15 != 0);
+            //var divisibleNumbers = numbers.Where(n => (n % 3 == 0 || n % 5 == 0 ) && n % 15 != 0);
+
+            //README requirements specify loop, using loop:
+            var divisibleNumbers = new List<int>();
+            foreach (var n in numbers)
+            {
+                if ((n % 3 == 0 || n % 5 == 0) && n % 15 != 0)
+                {
+                    divisibleNumbers.Add(n);
+                }
+            }
             //note: 100 is included and should be in README example
             Console.WriteLine(string.Join(", ", divisibleNumbers));
+
+            // run event scheduler tests
+            TestEventScheduler.RunTests();
 
         }
     }
